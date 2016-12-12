@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(runjags)\n##parameters##\nn.subjects <- 200\nP <- .6 #probability \nprime <- 170\nnoise.sd <- 5\nsong.bank.mean <- 120\nsong.bank.sd <- 15\n##############\n\npick.song <- function(songs, prime.song){ #function that generates the tempo for one subject\n  songs <- rnorm(1,song.bank.mean,song.bank.sd) #tempo in head without prime\n  prime.song <- prime #primed tempo\n  noise <- rnorm(1,0,noise.sd)\n  decision <- runif(1,0,1)\n  if(decision <= P){\n    return(prime.song + noise)}\n  else{\n    return(songs)}\n}\nSubject = 1:n.subjects\nPrime.tempo = rep(prime, n.subjects)\nTempo = sapply(1:n.subjects, pick.song)\n\njags.data <- list(\n  tempo.produced=Tempo,\n  primed.tempo=Prime.tempo,\n  subjects=n.subjects\n)\n\nresult <- run.jags('Preferred Tempo Model.txt', monitor=c('theta'), data=jags.data, n.chains=3, burnin=1000, sample=10000)\nplot(result)\nsummary(result)\n\nlibrary(ggplot2)\nplot.data <- data.frame(Subject, Prime.tempo, Tempo)\n\nggplot(plot.data, aes(x=Subject, y=Tempo))+\n  geom_point()\n  ",
+    "created" : 1480606864186.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1784609020",
+    "id" : "A17054E4",
+    "lastKnownWriteTime" : 1481512173,
+    "last_content_update" : 1481512173171,
+    "path" : "~/Final Project/Preferred Tempo.R",
+    "project_path" : "Preferred Tempo.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,10 @@
+model{
+  for(i in 1:subjects){
+    tempo.produced[i] ~ dnorm( mu.produced[i], 1 / sd.produced^2 )
+    mu.produced[i] <- (1-choice[i]) * song.bank + choice[i] * primed.tempo[i]
+    choice[i] ~ dbern(theta)
+  }
+  sd.produced ~ dunif(0,50)
+  song.bank ~ dnorm(120, 1/15^2)
+  theta ~ dunif(0,1)
+} 

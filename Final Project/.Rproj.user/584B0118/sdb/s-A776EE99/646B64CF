@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1481498996931.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "646B64CF",
+    "lastKnownWriteTime" : 4294967302,
+    "last_content_update" : 1481498996931,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "6202lde04q",
+        "caption" : "plot.data",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=plot.data&cache_key=6202lde04q",
+        "displayedObservations" : 200,
+        "environment" : "",
+        "object" : "plot.data",
+        "totalObservations" : 200,
+        "variables" : 3
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

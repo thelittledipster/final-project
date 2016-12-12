@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "model{\n  for(i in 1:subjects){\n    tempo.produced[i] ~ dnorm( mu.produced[i], 1 / sd.produced^2 )\n    mu.produced[i] <- (1-choice[i]) * song.bank + choice[i] * primed.tempo[i]\n    choice[i] ~ dbern(theta)\n  }\n  sd.produced ~ dunif(0,50)\n  song.bank ~ dnorm(120, 1/15^2)\n  theta ~ dunif(0,1)\n} \n",
+    "created" : 1480896415101.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1669788360",
+    "id" : "26BEDF71",
+    "lastKnownWriteTime" : 1481501459,
+    "last_content_update" : 1481503361031,
+    "path" : "~/Final Project/Preferred Tempo Model.txt",
+    "project_path" : "Preferred Tempo Model.txt",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}
